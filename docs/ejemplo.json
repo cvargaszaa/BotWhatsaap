@@ -1,0 +1,39 @@
+{
+    "object": "whatsapp_business_account",
+    "entry": [
+        {
+            "id": "283104608230000",
+            "changes": [
+                {
+                    "value": {
+                        "messaging_product": "whatsapp",
+                        "metadata": {
+                            "display_phone_number": "15550334138",
+                            "phone_number_id": "329054006960772"
+                        },
+                        "contacts": [
+                            {
+                                "profile": {
+                                    "name": "Carlos V Zaa"
+                                },
+                                "wa_id": "584143046106"
+                            }
+                        ],
+                        "messages": [
+                            {
+                                "from": "584143046106",
+                                "id": "wamid.HBgMNTg0MTQzMDQ2MTA2FQIAEhgUM0E3MjE3OTJGNzM2MTVBODg1QjIA",
+                                "timestamp": "1718657607",
+                                "text": {
+                                    "body": "Hola ale"
+                                },
+                                "type": "text"
+                            }
+                        ]
+                    },
+                    "field": "messages"
+                }
+            ]
+        }
+    ]
+}
