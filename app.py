@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import http.client
 import json
 
 app = Flask (__name__)
@@ -19,14 +20,7 @@ class log(db.Model):
 #Crear tabla si no existe
 with app.app_context():
     db.create_all ()
-    
-    Prueba1 = log(texto='Mensaje de prueba 1')
-    Prueba2 = log(texto='Mensaje de prueba 2')
-    
-    db.session.add(Prueba1)
-    db.session.add(Prueba2)
-    db.session.commit()
-    
+        
 #Funcion para ordenar los registros por fecha y hora
 def ordenar_por_fecha_y_hora(registros):
     return sorted(registros, key=lambda x: x.fecha_y_hora,reverse=True)
@@ -48,7 +42,35 @@ def agregar_mensajes_log(texto):
     db.session.add(nuevo_registro)
     db.session.commit()
     
-#agregar_mensajes_log(json.dumps("Test1"))
+#Token de verificacion para la configuracion
+TOKEN_BOTGMI = "BOTGMI"
+
+@app.route('/webhook', methods=['GET','POST'])
+def webhook():
+    if request.method == 'GET':
+        challenge = verificar_token(request)
+        return challenge
+    elif request.method == 'POST':
+        reponse = recibir_mensajes(request)
+        return reponse
+
+def verificar_token(req):
+    token = req.args.get('hub.verify_token')
+    challenge = req.args.get('hub.challenge')
+
+    if challenge and token == TOKEN_BOTGMI:
+        return challenge
+    else:
+        return jsonify({'error':'Token Invalido'}),401
+
+def recibir_mensajes(req):
+    req = request.get_json()
+    agregar_mensajes_log(req)
+    
+    return jsonify({'message':'EVENT_RECEIVED'})
+    
+
+
 
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=80,debug=True)
