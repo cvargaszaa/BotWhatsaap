@@ -102,7 +102,8 @@ def recibir_mensajes(req):
                     enviar_mensajes_whatsapp(text,numero)
                     
                     #Guardar Log en la BD
-                    agregar_mensajes_log(json.dumps(messages))
+                    agregar_mensajes_log(json.dumps(text))
+                    agregar_mensajes_log(json.dumps(numero))
                     
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
