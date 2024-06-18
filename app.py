@@ -78,22 +78,152 @@ def recibir_mensajes(req):
 
             if "type" in messages:
                 tipo = messages["type"]
+                
+                #Guardar Log en la BD
+                agregar_mensajes_log(json.dumps(messages))
 
                 if tipo == "interactive":
-                    return 0
+                    tipo_interactivo = messages["interactive"]["type"]
+                    
+                    if tipo_interactivo == "button_reply":
+                        text = messages["interactive"]["button_reply"]["id"]
+                        numero = messages["from"]
+
+                        enviar_mensajes_whatsapp(text,numero)
 
                 if "text" in messages:
                     text = messages["text"]["body"]
                     numero = messages["from"]
 
-                    agregar_mensajes_log(json.dumps(text))
-                    agregar_mensajes_log(json.dumps(numero))
-        
+                    enviar_mensajes_whatsapp(text,numero)
+                    
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
         return jsonify({'message':'EVENT_RECEIVED'})
 
-
+def enviar_mensajes_whatsapp(texto,number):
+    texto = texto.lower()
+    
+    if "hola, Hola, HOLA" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
+            }
+        }
+    elif "hola" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
+                },
+                "footer": {
+                    "text": "¿En que puedo ayudarte?\n \nSelecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"solicitudes",
+                                "title":"Solicitudes"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"reclamos",
+                                "title":"Reclamos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"reque",
+                                "title":"Requerimientos"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+        
+    elif "1" in texto: 
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Por favor indicame ¿En que puedo ayudarte?\n \n  "
+            }
+        }
+    elif "solicitudes" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": " A continuacion te presento las opciones disponibles"
+                },
+                "footer": {
+                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"pventas",
+                                "title":"Inf. Puntos de Ventas"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"pproductos",
+                                "title":"Inf. de Productos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"contacto",
+                                "title":"Contactanos"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+        
+#Convertir el diccionaria a formato JSON
+    data=json.dumps(data)
+    
+    headers = {
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer EAAQ5ZBipbEvkBO5ZBglPe2ZCvZCg8f4fOzQrfaJVJVCZAZCYtlZCZCLrkumFJxMq8RjrsamqEcOSiV524pE94nYN9oe5qkEQiOkZADz7QbyBicoeABuFuzpiVwZCxGLjXUOL4zVGftP6StFEJblJdC0YfxQxOMVbIbInkUn9PuAHzGpA5RbxxfPxVkv7DZAoFZA8JhwZAyUPmXZC8VeUhswZBySgqgyrbtM1QEZD"
+    }
+    
+    connection = http.client.HTTPSConnection("graph.facebook.com")
+    
+    try:
+        connection.request("POST","/v18.0/117721278011867/messages", data, headers)
+        response = connection.getresponse()
+        print(response.status, response.reason)
+    except Exception as e:
+        agregar_mensajes_log(json.dumps(e))
+    finally:
+        connection.close()
 
 
 if __name__=='__main__':
