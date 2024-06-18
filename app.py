@@ -133,8 +133,8 @@ def enviar_mensajes_whatsapp(texto,number):
                 "preview_url": False,
                 "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             }
-        }    
-    elif "0" in texto:
+        }        
+    elif "boton" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -143,46 +143,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
-                },
-                "footer": {
-                    "text": "¿En que puedo ayudarte?\n \nSelecciona la opción que mejor responda a tu consulta:"
-                },
-                "action": {
-                    "buttons":[
-                        {
-                            "type": "reply",
-                            "reply":{
-                                "id":"soli",
-                                "title":"Solicitudes"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"recla",
-                                "title":"Reclamos"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"reque",
-                                "title":"Requerimientos"
-                            }
-                        }
-                    ]
-                }
-            }
-        }      
-    elif "soli" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "interactive",
-            "interactive":{
-                "type":"button",
-                "body": {
-                    "text": " A continuacion te presento las opciones disponibles"
+                    "text": "A continuacion te presento las opciones disponibles"
                 },
                 "footer": {
                     "text": "Selecciona la opción que mejor responda a tu consulta:"
@@ -192,63 +153,68 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"pventas",
-                                "title":"Inf. Puntos de Ventas"
+                                "id":"btnsi",
+                                "title":"Si"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"pproductos",
-                                "title":"Inf. de Productos"
+                                "id":"btnno",
+                                "title":"No"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"contacto",
-                                "title":"Contactanos"
+                                "id":"btntalvez",
+                                "title":"Tal Vez"
                             }
                         }
                     ]
                 }
             }
         }
-    else:
+    elif "btnsi" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
-            "type": "interactive",
-            "interactive":{
-                "type":"button",
-                "body": {
-                    "text": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
-                },
-                "footer": {
-                    "text": "¿En que puedo ayudarte?\n \nSelecciona la opción que mejor responda a tu consulta:"
-                },
-                "action": {
-                    "buttons":[
-                        {
-                            "type": "reply",
-                            "reply":{
-                                "id":"soli",
-                                "title":"Solicitudes"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"recla",
-                                "title":"Reclamos"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"reque",
-                                "title":"Requerimientos"
-                            }
-                        }
-                    ]
-                }
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Muchas Gracias por Aceptar."
+            }
+        }
+    elif "btnno" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Es una Lastima."
+            }
+        }
+    elif "btntalvez" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Estare a la espera."
+            }
+        }
+    else:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "🚀 Hola, visita mi web anderson-bastidas.com para más información.\n \n📌Por favor, ingresa un número #️⃣ para recibir información.\n \n1️⃣. Información del Curso. ❔\n2️⃣. Ubicación del local. 📍\n3️⃣. Enviar temario en PDF. 📄\n4️⃣. Audio explicando curso. 🎧\n5️⃣. Video de Introducción. ⏯️\n6️⃣. Hablar con AnderCode. 🙋‍♂️\n7️⃣. Horario de Atención. 🕜 \n0️⃣. Regresar al Menú. 🕜"
             }
         }
         
