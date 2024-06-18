@@ -64,8 +64,6 @@ def verificar_token(req):
         return jsonify({'error':'Token Invalido'}),401
 
 def recibir_mensajes(req):
-    req = request.get_json()
-    agregar_mensajes_log(json.dumps(req))
     try:
         req = request.get_json()
         entry =req['entry'][0]
@@ -90,12 +88,21 @@ def recibir_mensajes(req):
                         numero = messages["from"]
 
                         enviar_mensajes_whatsapp(text,numero)
+                    
+                    elif tipo_interactivo == "list_reply":
+                        text = messages["interactive"]["list_reply"]["id"]
+                        numero = messages["from"]
 
+                        enviar_mensajes_whatsapp(text,numero)
+                        
                 if "text" in messages:
                     text = messages["text"]["body"]
                     numero = messages["from"]
 
                     enviar_mensajes_whatsapp(text,numero)
+                    
+                    #Guardar Log en la BD
+                    agregar_mensajes_log(json.dumps(messages))
                     
         return jsonify({'message':'EVENT_RECEIVED'})
     except Exception as e:
@@ -115,7 +122,7 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
             }
         }
-    elif "Hola" in texto:
+    elif "0" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -134,13 +141,13 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"solicitudes",
+                                "id":"soli",
                                 "title":"Solicitudes"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"reclamos",
+                                "id":"recla",
                                 "title":"Reclamos"
                             }
                         },{
@@ -153,20 +160,8 @@ def enviar_mensajes_whatsapp(texto,number):
                     ]
                 }
             }
-        }
-        
-    elif "1" in texto: 
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Por favor indicame ¿En que puedo ayudarte?\n \n  "
-            }
-        }
-    elif "solicitudes" in texto:
+        }      
+    elif "soli" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
@@ -199,6 +194,45 @@ def enviar_mensajes_whatsapp(texto,number):
                             "reply":{
                                 "id":"contacto",
                                 "title":"Contactanos"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    else:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "¡Bienvenido!\n mi nombre es P.A.NDora, la asistente virtual de Negocio Internacional"
+                },
+                "footer": {
+                    "text": "¿En que puedo ayudarte?\n \nSelecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"soli",
+                                "title":"Solicitudes"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"recla",
+                                "title":"Reclamos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"reque",
+                                "title":"Requerimientos"
                             }
                         }
                     ]
