@@ -144,6 +144,12 @@ def enviar_mensajes_whatsapp(texto,number):
                         },{
                             "type": "reply",
                             "reply":{
+                                "id":"info2",
+                                "title":"Información 2"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
                                 "id":"btnrecla",
                                 "title":"Reclamos"
                             }
