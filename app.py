@@ -155,19 +155,19 @@ def enviar_mensajes_whatsapp(texto,number):
                             "type": "reply",
                             "reply":{
                                 "id":"btnsi",
-                                "title":"📌Inf. de Productos"
+                                "title":"si"
                             }
                         },{
                             "type": "reply",
                             "reply":{
                                 "id":"btnno",
-                                "title":"📌Inf. de Puntos de Ventas"
+                                "title":"no"
                             }
                         },{
                             "type": "reply",
                             "reply":{
                                 "id":"btntalvez",
-                                "title":"📌Contactame"
+                                "title":"tal"
                             }
                         }
                     ]
