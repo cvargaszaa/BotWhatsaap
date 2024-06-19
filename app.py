@@ -144,7 +144,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "A continuacion te presento las opciones disponibles"
+                    "text": "¡Bienvenido!\n \n Mi nombre es P.A.NDora, la asistente virtual del Negocio Internacional EP"
                 },
                 "footer": {
                     "text": "Selecciona la opción que mejor responda a tu consulta:"
@@ -155,19 +155,19 @@ def enviar_mensajes_whatsapp(texto,number):
                             "type": "reply",
                             "reply":{
                                 "id":"btnsi",
-                                "title":"si"
+                                "title":"Inf. de Ventas"
                             }
                         },{
                             "type": "reply",
                             "reply":{
                                 "id":"btnno",
-                                "title":"no"
+                                "title":"Inf. de Productos"
                             }
                         },{
                             "type": "reply",
                             "reply":{
                                 "id":"btntalvez",
-                                "title":"tal"
+                                "title":"Contactame"
                             }
                         }
                     ]
