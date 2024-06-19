@@ -123,18 +123,7 @@ def enviar_mensajes_whatsapp(texto,number):
                 "preview_url": False,
                 "body": "¡Bienvenido!\n \n Mi nombre es P.A.NDora, la asistente virtual del Negocio Internacional EP"
             }
-        }
-    elif "1" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-            }
-        }        
+        }       
     elif "soli" in texto:
         data = {
             "messaging_product": "whatsapp",
@@ -144,7 +133,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "¡Bienvenido!\n \n Mi nombre es P.A.NDora, la asistente virtual del Negocio Internacional EP"
+                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
                     "text": "Selecciona la opción que mejor responda a tu consulta:"
@@ -168,6 +157,39 @@ def enviar_mensajes_whatsapp(texto,number):
                             "reply":{
                                 "id":"btntalvez",
                                 "title":"Contactame"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    elif "info" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "📄A continuación te muestro las opciones disponibles para esta sección de Informacion📄\n \n"
+                },
+                "footer": {
+                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnven",
+                                "title":"Inf. de Ventas"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnpro",
+                                "title":"Inf. de Productos"
                             }
                         }
                     ]
@@ -207,9 +229,72 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "Estare a la espera."
             }
         }
-    else:
+    elif "btnven" in texto:
         data={
-
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "document",
+            "document": {
+                    "link": "https://xarxaempren.gencat.cat/web/.content/07recursos/fitxers/estrategia_punt_vendaCAS_tcm141_49547.pdf",
+                    "caption": "Temario del Curso #001"
+                }
+            }
+    elif "btnpro" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "document",
+            "document": {
+                    "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
+                    "caption": "Temario del Curso #001"
+                }
+            }
+    else:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
+                },
+                "footer": {
+                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"soli",
+                                "title":"Solicitudes"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"info",
+                                "title":"Información"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"recla",
+                                "title":"Reclamos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"contac",
+                                "title":"Contactanos"
+                            }
+                        }
+                    ]
+                }
+            }
         }
         
     #Convertir el diccionaria a formato JSON
