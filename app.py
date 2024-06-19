@@ -147,12 +147,6 @@ def enviar_mensajes_whatsapp(texto,number):
                                 "id":"btnrecla",
                                 "title":"Reclamos"
                             }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btncon",
-                                "title":"Contactame"
-                            }
                         }
                     ]
                 }
