@@ -78,7 +78,7 @@ def recibir_mensajes(req):
                 tipo = messages["type"]
                 
                 #Guardar Log en la BD
-                agregar_mensajes_log(json.dumps(type))
+                agregar_mensajes_log(json.dumps(tipo))
 
                 if tipo == "interactive":
                     tipo_interactivo = messages["interactive"]["type"]
