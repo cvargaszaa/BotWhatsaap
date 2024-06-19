@@ -78,7 +78,7 @@ def recibir_mensajes(req):
                 tipo = messages["type"]
                 
                 #Guardar Log en la BD
-                agregar_mensajes_log(json.dumps(messages))
+                agregar_mensajes_log(json.dumps(type))
 
                 if tipo == "interactive":
                     tipo_interactivo = messages["interactive"]["type"]
@@ -134,7 +134,7 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             }
         }        
-    elif "solicitudes" in texto:
+    elif "sol" in texto:
         data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
