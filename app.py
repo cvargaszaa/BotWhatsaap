@@ -132,19 +132,25 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"btnsi",
-                                "title":"Inf. de Ventas"
+                                "id":"soli",
+                                "title":"Solicitudes"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"btnno",
-                                "title":"Inf. de Productos"
+                                "id":"info",
+                                "title":"Información"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"btntalvez",
+                                "id":"btnrecla",
+                                "title":"Reclamos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btncon",
                                 "title":"Contactame"
                             }
                         }
@@ -210,6 +216,12 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
+                                "id":"btnq",
+                                "title":"¿Quienes Somos?"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
                                 "id":"btnven",
                                 "title":"Inf. de Ventas"
                             }
@@ -257,15 +269,15 @@ def enviar_mensajes_whatsapp(texto,number):
                 "body": "Estare a la espera."
             }
         }
-    elif "btnven" in texto:
+    elif "btnq" in texto:
         data={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
             "type": "document",
             "document": {
-                    "link": "https://xarxaempren.gencat.cat/web/.content/07recursos/fitxers/estrategia_punt_vendaCAS_tcm141_49547.pdf",
-                    "caption": "Temario del Curso #001"
+                    "link": "https://empresaspolar.com/pdf/POLAR_4web.pdf",
+                    "caption": "Empresas Polar ¿Quienes somos?"
                 }
             }
     elif "btnpro" in texto:
