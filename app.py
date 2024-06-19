@@ -114,16 +114,50 @@ def enviar_mensajes_whatsapp(texto,number):
     texto = texto.lower()
     
     if "hola" in texto:
-        data={
+        data = {
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "¡Bienvenido!\n \n Mi nombre es P.A.NDora, la asistente virtual del Negocio Internacional EP"
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
+                },
+                "footer": {
+                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"soli",
+                                "title":"Solicitudes"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"info",
+                                "title":"Información"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"recla",
+                                "title":"Reclamos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"contac",
+                                "title":"Contactanos"
+                            }
+                        }
+                    ]
+                }
             }
-        }       
+        }      
     elif "soli" in texto:
         data = {
             "messaging_product": "whatsapp",
@@ -248,7 +282,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "document",
             "document": {
                     "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
-                    "caption": "Temario del Curso #001"
+                    "caption": "Lista de Productos Activos"
                 }
             }
     else:
