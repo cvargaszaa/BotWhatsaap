@@ -9,6 +9,9 @@
   "type": "interactive",
   "interactive": {
     "type": "button_reply",
-    "button_reply": { "id": "btnsi", "title": "Si" }
+    "button_reply": {
+      "id": "btnsi",
+      "title": "Si"
+    }
   }
 }
