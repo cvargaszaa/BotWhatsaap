@@ -132,32 +132,26 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"soli",
-                                "title":"Solicitudes"
+                                "id":"btnsi",
+                                "title":"Inf. de Ventas"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"info",
-                                "title":"Información"
+                                "id":"btnno",
+                                "title":"Inf. de Productos"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"recla",
-                                "title":"Reclamos"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"contac",
-                                "title":"Contactanos"
+                                "id":"btntalvez",
+                                "title":"Contactame"
                             }
                         }
                     ]
                 }
             }
-        }      
+        }          
     elif "soli" in texto:
         data = {
             "messaging_product": "whatsapp",
