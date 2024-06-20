@@ -125,7 +125,7 @@ def enviar_mensajes_whatsapp(texto,number):
                     "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
-                    "text": "Selecciona una de las opciones"
+                    "text": "Por Favor indicame si eres:"
                 },
                 "action": {
                     "buttons":[
@@ -133,13 +133,13 @@ def enviar_mensajes_whatsapp(texto,number):
                             "type": "reply",
                             "reply":{
                                 "id":"btnsi",
-                                "title":"Si"
+                                "title":"Cliente"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"btnno",
-                                "title":"No"
+                                "id":"concom",
+                                "title":"Consumidor"
                             }
                         }
                     ]
