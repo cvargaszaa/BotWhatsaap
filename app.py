@@ -233,7 +233,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "type": "document",
             "document": {
                     "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
-                    "caption": "Lista de Productos Activos"
+                    "caption": "Lista de Productos Activos - Disponibles"
                 }
             }
     elif "btnven" in texto:
