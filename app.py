@@ -188,6 +188,11 @@ def enviar_mensajes_whatsapp(texto,number):
                                     "id":"btndireccion",
                                     "title" : "Contactame",
                                     "description": "Nos pondremos en comunicacion contigo."
+                                },
+                                {
+                                    "id":"btndireccion",
+                                    "title" : "Contactame",
+                                    "description": "Nos pondremos en comunicacion contigo."
                                 }
                             ]
                         },{
