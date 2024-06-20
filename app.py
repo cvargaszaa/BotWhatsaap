@@ -201,17 +201,12 @@ def enviar_mensajes_whatsapp(texto,number):
                                 {
                                     "id":"btndireccion",
                                     "title" : "Problemas con Productos",
-                                    "description": "Reclamo por incidencias presentadas con nuestros productos."
+                                    "description": "Incidencias presentadas con nuestros productos."
                                 },
                                 {
                                     "id":"btnentrega",
                                     "title" : "Poblemas con Presencia/Disponibilidad",
                                     "description": "Reclamo por falta de Producto."
-                                },
-                                {
-                                    "id":"btnentrega",
-                                    "title" : "Otros",
-                                    "description": "Otras razones de reclamos."
                                 }
                             ]
                         }
