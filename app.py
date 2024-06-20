@@ -190,6 +190,20 @@ def enviar_mensajes_whatsapp(texto,number):
                                     "description": "Nos pondremos en comunicacion contigo."
                                 }
                             ]
+                        },{
+                            "title":"Reclamos",
+                            "rows":[
+                                {
+                                    "id":"btndireccion",
+                                    "title" : "Problemas con Productos",
+                                    "description": "Incidencias presentadas con nuestros productos."
+                                },
+                                {
+                                    "id":"btnentrega",
+                                    "title" : "Poblemas con Disponibilidad",
+                                    "description": "Reclamo por falta de Producto."
+                                }
+                            ]
                         }
                     ]
                 }
