@@ -182,17 +182,12 @@ def enviar_mensajes_whatsapp(texto,number):
                                 }
                             ]
                         },{
-                            "title":"Distribución y Entrega",
+                            "title":"Solicitudes",
                             "rows":[
                                 {
                                     "id":"btndireccion",
-                                    "title" : "Local",
-                                    "description": "Puedes visitar nuestro local."
-                                },
-                                {
-                                    "id":"btnentrega",
-                                    "title" : "Entrega",
-                                    "description": "La entrega se realiza todos los dias."
+                                    "title" : "Contactame",
+                                    "description": "Nos pondremos en comunicacion contigo."
                                 }
                             ]
                         }
