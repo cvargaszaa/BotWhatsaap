@@ -154,66 +154,47 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "👍🏼Gracias!!👍🏼\n \n A continuación enlisto las opciones disponibles"
+                    "text": "Selecciona Alguna Opción"
                 },
                 "footer": {
-                    "text": "Selecciona una de las opciones: 👆🏼"
+                    "text": "Selecciona una de las opciones para poder ayudarte"
                 },
                 "action":{
                     "button":"Ver Opciones",
                     "sections":[
                         {
-                            "title":"Información",
+                            "title":"Compra y Venta",
                             "rows":[
                                 {
-                                    "id":"btnq1",
-                                    "title" : "¿Quienes somos?",
-                                    "description": "Información del Negocio Internacional de Empresas Polar."
+                                    "id":"btncompra",
+                                    "title" : "Comprar",
+                                    "description": "Compra los mejores articulos de tecnologia"
                                 },
                                 {
-                                    "id":"btnpro",
-                                    "title" : "Inf. de Productos",
-                                    "description": "Productos Actualmente disponibles."
-                                },
-                                {
-                                    "id":"btnven",
-                                    "title" : "Inf. Punto de venta",
-                                    "description": "Presencia de nuestras marcas."
+                                    "id":"btnvender",
+                                    "title" : "Vender",
+                                    "description": "Vende lo que ya no estes usando"
                                 }
                             ]
                         },{
-                            "title":"Solicitudes",
+                            "title":"Distribución y Entrega",
                             "rows":[
                                 {
                                     "id":"btndireccion",
-                                    "title" : "Contactame",
-                                    "description": "Nos pondremos en comunicacion contigo."
-                                },
-                                {
-                                    "id":"btndireccion",
-                                    "title" : "Contactame",
-                                    "description": "Nos pondremos en comunicacion contigo."
-                                }
-                            ]
-                        },{
-                            "title":"Reclamos",
-                            "rows":[
-                                {
-                                    "id":"btndireccion",
-                                    "title" : "Problemas con Productos",
-                                    "description": "Incidencias presentadas con nuestros productos."
+                                    "title" : "Local",
+                                    "description": "Puedes visitar nuestro local."
                                 },
                                 {
                                     "id":"btnentrega",
-                                    "title" : "Poblemas con Presencia/Disponibilidad",
-                                    "description": "Reclamo por falta de Producto."
+                                    "title" : "Entrega",
+                                    "description": "La entrega se realiza todos los dias."
                                 }
                             ]
                         }
                     ]
                 }
             }
-        }    
+        }
     elif "btnq1" in texto:
         data={
             "messaging_product": "whatsapp",
