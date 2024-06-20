@@ -293,7 +293,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "Selecciona Alguna Opción"
+                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
                     "text": "Selecciona una de las opciones para poder ayudarte"
@@ -302,31 +302,50 @@ def enviar_mensajes_whatsapp(texto,number):
                     "button":"Ver Opciones",
                     "sections":[
                         {
-                            "title":"Compra y Venta",
+                            "title":"Información",
                             "rows":[
                                 {
                                     "id":"btncompra",
-                                    "title" : "Comprar",
-                                    "description": "Compra los mejores articulos de tecnologia"
+                                    "title" : "¿Quienes somos?",
+                                    "description": "Información del Negocio Internacional de Empresas Polar."
                                 },
                                 {
                                     "id":"btnvender",
-                                    "title" : "Vender",
-                                    "description": "Vende lo que ya no estes usando"
+                                    "title" : "Inf. de Productos",
+                                    "description": "Productos Actualmente disponibles en el mercado."
+                                },
+                                {
+                                    "id":"btnvender",
+                                    "title" : "Inf. de Punto de venta",
+                                    "description": "Presencia de nuestras marcas."
                                 }
                             ]
                         },{
-                            "title":"Distribución y Entrega",
+                            "title":"Solicitudes",
                             "rows":[
                                 {
                                     "id":"btndireccion",
-                                    "title" : "Local",
-                                    "description": "Puedes visitar nuestro local."
+                                    "title" : "Contactame",
+                                    "description": "Dejamos tus datos y nos pondremos en comunicacion contigo."
+                                }
+                            ]
+                        },{
+                            "title":"Reclamos",
+                            "rows":[
+                                {
+                                    "id":"btndireccion",
+                                    "title" : "Problemas con Productos",
+                                    "description": "Reclamo por incidencias presentadas con nuestros productos."
                                 },
                                 {
                                     "id":"btnentrega",
-                                    "title" : "Entrega",
-                                    "description": "La entrega se realiza todos los dias."
+                                    "title" : "Poblemas con Presencia/Disponibilidad",
+                                    "description": "Reclamo por falta de Producto."
+                                },
+                                {
+                                    "id":"btnvender",
+                                    "title" : "Otros",
+                                    "description": "Otras razones de reclamos."
                                 }
                             ]
                         }
