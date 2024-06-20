@@ -154,7 +154,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "Gracias!!\n \n A continuación enlisto las opciones disponibles\n \n"
+                    "text": "Selecciona Alguna Opción"
                 },
                 "footer": {
                     "text": "Selecciona una de las opciones para poder ayudarte"
@@ -163,57 +163,38 @@ def enviar_mensajes_whatsapp(texto,number):
                     "button":"Ver Opciones",
                     "sections":[
                         {
-                            "title":"Información",
+                            "title":"Compra y Venta",
                             "rows":[
                                 {
-                                    "id":"btnq",
-                                    "title" : "¿Quienes somos?",
-                                    "description": "Información del Negocio Internacional de Empresas Polar."
-                                },
-                                {
-                                    "id":"btnpro",
-                                    "title" : "Inf. de Productos",
-                                    "description": "Productos Actualmente disponibles en el mercado."
-                                },
-                                {
-                                    "id":"btnven",
-                                    "title" : "Inf. de Punto de venta",
-                                    "description": "Presencia de nuestras marcas."
-                                }
-                            ]
-                        },{
-                            "title":"Solicitudes",
-                            "rows":[
-                                {
-                                    "id":"btndireccion",
-                                    "title" : "Contactame",
-                                    "description": "Dejamos tus datos y nos pondremos en comunicacion contigo."
-                                }
-                            ]
-                        },{
-                            "title":"Reclamos",
-                            "rows":[
-                                {
-                                    "id":"btndireccion",
-                                    "title" : "Problemas con Productos",
-                                    "description": "Reclamo por incidencias presentadas con nuestros productos."
-                                },
-                                {
-                                    "id":"btnentrega",
-                                    "title" : "Poblemas con Presencia/Disponibilidad",
-                                    "description": "Reclamo por falta de Producto."
+                                    "id":"btncompra",
+                                    "title" : "Comprar",
+                                    "description": "Compra los mejores articulos de tecnologia"
                                 },
                                 {
                                     "id":"btnvender",
-                                    "title" : "Otros",
-                                    "description": "Otras razones de reclamos."
+                                    "title" : "Vender",
+                                    "description": "Vende lo que ya no estes usando"
+                                }
+                            ]
+                        },{
+                            "title":"Distribución y Entrega",
+                            "rows":[
+                                {
+                                    "id":"btndireccion",
+                                    "title" : "Local",
+                                    "description": "Puedes visitar nuestro local."
+                                },
+                                {
+                                    "id":"btnentrega",
+                                    "title" : "Entrega",
+                                    "description": "La entrega se realiza todos los dias."
                                 }
                             ]
                         }
                     ]
                 }
             }
-        }      
+        }    
     elif "btnq" in texto:
         data={
             "messaging_product": "whatsapp",
