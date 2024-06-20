@@ -154,16 +154,16 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "Selecciona Alguna Opción"
+                    "text": "👍🏼Gracias!!👍🏼\n \n A continuación enlisto las opciones disponibles"
                 },
                 "footer": {
-                    "text": "Selecciona una de las opciones para poder ayudarte"
+                    "text": "Selecciona una de las opciones: 👆🏼"
                 },
                 "action":{
                     "button":"Ver Opciones",
                     "sections":[
                         {
-                            "title":"Compra y Venta",
+                            "title":"Información",
                             "rows":[
                                 {
                                     "id":"btncompra",
@@ -177,7 +177,7 @@ def enviar_mensajes_whatsapp(texto,number):
                                 }
                             ]
                         },{
-                            "title":"Distribución y Entrega",
+                            "title":"Solicitudes",
                             "rows":[
                                 {
                                     "id":"btndireccion",
