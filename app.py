@@ -125,167 +125,28 @@ def enviar_mensajes_whatsapp(texto,number):
                     "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
-                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                    "text": "*Por Favor indicame si eres:*"
                 },
                 "action": {
                     "buttons":[
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"soli",
-                                "title":"Solicitudes"
+                                "id":"cli",
+                                "title":"Cliente - Distribuidor"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"info",
-                                "title":"Información"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnrecla",
-                                "title":"Reclamos"
+                                "id":"concom",
+                                "title":"Consumidor - Comprador"
                             }
                         }
                     ]
                 }
             }
         }          
-    elif "soli" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "interactive",
-            "interactive":{
-                "type":"button",
-                "body": {
-                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
-                },
-                "footer": {
-                    "text": "Selecciona la opción que mejor responda a tu consulta:"
-                },
-                "action": {
-                    "buttons":[
-                        {
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnsi",
-                                "title":"Inf. de Ventas"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnno",
-                                "title":"Inf. de Productos"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btntalvez",
-                                "title":"Contactame"
-                            }
-                        }
-                    ]
-                }
-            }
-        }
-    elif "info" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "interactive",
-            "interactive":{
-                "type":"button",
-                "body": {
-                    "text": "📄A continuación te muestro las opciones disponibles para esta sección de Informacion📄\n \n"
-                },
-                "footer": {
-                    "text": "Selecciona la opción que mejor responda a tu consulta:"
-                },
-                "action": {
-                    "buttons":[
-                        {
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnq",
-                                "title":"¿Quienes Somos?"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnven",
-                                "title":"Inf. de Ventas"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btnpro",
-                                "title":"Inf. de Productos"
-                            }
-                        }
-                    ]
-                }
-            }
-        }
-    elif "btnsi" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Muchas Gracias por Aceptar."
-            }
-        }
-    elif "btnno" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Es una Lastima."
-            }
-        }
-    elif "btntalvez" in texto:
-        data = {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "text",
-            "text": {
-                "preview_url": False,
-                "body": "Estare a la espera."
-            }
-        }
-    elif "btnq" in texto:
-        data={
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "document",
-            "document": {
-                    "link": "https://empresaspolar.com/pdf/POLAR_4web.pdf",
-                    "caption": "Empresas Polar ¿Quienes somos?"
-                }
-            }
-    elif "btnpro" in texto:
-        data={
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": number,
-            "type": "document",
-            "document": {
-                    "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
-                    "caption": "Lista de Productos Activos"
-                }
-            }
-    elif "22" in texto:
+    elif "concom" in texto:
         data ={
             "messaging_product": "whatsapp",
             "to": number,
@@ -293,7 +154,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
+                    "text": "Gracias!!\n \n A continuación enlisto las opciones disponibles\n \n"
                 },
                 "footer": {
                     "text": "Selecciona una de las opciones para poder ayudarte"
@@ -305,17 +166,17 @@ def enviar_mensajes_whatsapp(texto,number):
                             "title":"Información",
                             "rows":[
                                 {
-                                    "id":"btncompra",
+                                    "id":"btnq",
                                     "title" : "¿Quienes somos?",
                                     "description": "Información del Negocio Internacional de Empresas Polar."
                                 },
                                 {
-                                    "id":"btnvender",
+                                    "id":"btnpro",
                                     "title" : "Inf. de Productos",
                                     "description": "Productos Actualmente disponibles en el mercado."
                                 },
                                 {
-                                    "id":"btnvender",
+                                    "id":"btnven",
                                     "title" : "Inf. de Punto de venta",
                                     "description": "Presencia de nuestras marcas."
                                 }
@@ -352,7 +213,40 @@ def enviar_mensajes_whatsapp(texto,number):
                     ]
                 }
             }
-        }   
+        }      
+    elif "btnq" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "document",
+            "document": {
+                    "link": "https://empresaspolar.com/pdf/POLAR_4web.pdf",
+                    "caption": "Empresas Polar ¿Quienes somos?"
+                }
+            }
+    elif "btnpro" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "document",
+            "document": {
+                    "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
+                    "caption": "Lista de Productos Activos"
+                }
+            }
+    elif "btnven" in texto:
+        data={
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "document",
+            "document": {
+                    "link": "https://www.ign.es/espmap/mapas_mundo_bach/pdf/Mundo_Mapa_04.pdf",
+                    "caption": "Donde estamos presente - Puntos de venta Autorizados"
+                }
+        }
     else:
         data = {
             "messaging_product": "whatsapp",
@@ -365,33 +259,21 @@ def enviar_mensajes_whatsapp(texto,number):
                     "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
-                    "text": "Selecciona la opción que mejor responda a tu consulta:"
+                    "text": "*Por Favor indicame si eres:*"
                 },
                 "action": {
                     "buttons":[
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"soli",
-                                "title":"Solicitudes"
+                                "id":"cli",
+                                "title":"Cliente - Distribuidor"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"info",
-                                "title":"Información"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"recla",
-                                "title":"Reclamos"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"contac",
-                                "title":"Contactanos"
+                                "id":"concom",
+                                "title":"Consumidor - Comprador"
                             }
                         }
                     ]
