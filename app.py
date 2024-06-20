@@ -285,7 +285,7 @@ def enviar_mensajes_whatsapp(texto,number):
                     "caption": "Lista de Productos Activos"
                 }
             }
-    elif "holaa" in texto:
+    elif "22" in texto:
         data ={
             "messaging_product": "whatsapp",
             "to": number,
