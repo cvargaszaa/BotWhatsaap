@@ -237,10 +237,10 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "¿Confirmas tu registro?"
+                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
-                    "text": "Selecciona una de las opciones"
+                    "text": "Por Favor indicame si eres:"
                 },
                 "action": {
                     "buttons":[
@@ -253,14 +253,8 @@ def enviar_mensajes_whatsapp(texto,number):
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"btnno",
-                                "title":"No"
-                            }
-                        },{
-                            "type": "reply",
-                            "reply":{
-                                "id":"btntalvez",
-                                "title":"Tal Vez"
+                                "id":"concom",
+                                "title":"Consumidor"
                             }
                         }
                     ]
