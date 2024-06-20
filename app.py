@@ -141,6 +141,12 @@ def enviar_mensajes_whatsapp(texto,number):
                                 "id":"concom",
                                 "title":"Consumidor - Comprador"
                             }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"concom",
+                                "title":"Consumidor - Comprador"
+                            }
                         }
                     ]
                 }
