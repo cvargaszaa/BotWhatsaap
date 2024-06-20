@@ -166,19 +166,19 @@ def enviar_mensajes_whatsapp(texto,number):
                             "title":"Información",
                             "rows":[
                                 {
-                                    "id":"btncompra",
+                                    "id":"btnq1",
                                     "title" : "¿Quienes somos?",
                                     "description": "Información del Negocio Internacional de Empresas Polar."
                                 },
                                 {
-                                    "id":"btnvender",
+                                    "id":"btnpro",
                                     "title" : "Inf. de Productos",
                                     "description": "Productos Actualmente disponibles."
                                 },
                                 {
-                                    "id":"btnvende",
+                                    "id":"btnven",
                                     "title" : "Inf. Punto de venta",
-                                    "description": "resencia de nuestras marcas."
+                                    "description": "Presencia de nuestras marcas."
                                 }
                             ]
                         },{
@@ -186,13 +186,8 @@ def enviar_mensajes_whatsapp(texto,number):
                             "rows":[
                                 {
                                     "id":"btndireccion",
-                                    "title" : "Local",
-                                    "description": "Puedes visitar nuestro local."
-                                },
-                                {
-                                    "id":"btnentrega",
-                                    "title" : "Entrega",
-                                    "description": "La entrega se realiza todos los dias."
+                                    "title" : "Contactame",
+                                    "description": "Nos pondremos en comunicacion contigo."
                                 }
                             ]
                         },{
@@ -200,13 +195,18 @@ def enviar_mensajes_whatsapp(texto,number):
                             "rows":[
                                 {
                                     "id":"btndireccion",
-                                    "title" : "Local",
-                                    "description": "Puedes visitar nuestro local."
+                                    "title" : "Problemas con Productos",
+                                    "description": "Reclamo por incidencias presentadas con nuestros productos."
                                 },
                                 {
                                     "id":"btnentrega",
-                                    "title" : "Entrega",
-                                    "description": "La entrega se realiza todos los dias."
+                                    "title" : "Poblemas con Presencia/Disponibilidad",
+                                    "description": "Reclamo por falta de Producto."
+                                },
+                                {
+                                    "id":"btnentrega",
+                                    "title" : "Otros",
+                                    "description": "Otras razones de reclamos."
                                 }
                             ]
                         }
