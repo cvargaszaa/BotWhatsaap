@@ -163,17 +163,22 @@ def enviar_mensajes_whatsapp(texto,number):
                     "button":"Ver Opciones",
                     "sections":[
                         {
-                            "title":"Compra y Venta",
+                            "title":"Información",
                             "rows":[
                                 {
-                                    "id":"btncompra",
-                                    "title" : "Comprar",
-                                    "description": "Compra los mejores articulos de tecnologia"
+                                    "id":"btnq1",
+                                    "title" : "Quienes somos",
+                                    "description": "Información del Negocio Internacional de Empresas Polar."
                                 },
                                 {
-                                    "id":"btnvender",
-                                    "title" : "Vender",
-                                    "description": "Vende lo que ya no estes usando"
+                                    "id":"btnpro",
+                                    "title" : "Inf. de Productos",
+                                    "description": "Productos Actualmente disponibles."
+                                },
+                                {
+                                    "id":"btnven",
+                                    "title" : "Inf. Punto de venta",
+                                    "description": "Presencia de nuestras marcas."
                                 }
                             ]
                         },{
