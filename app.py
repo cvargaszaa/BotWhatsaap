@@ -122,30 +122,30 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
+                    "text": "¿Confirmas tu registro?"
                 },
                 "footer": {
-                    "text": "*Por Favor indicame si eres:*"
+                    "text": "Selecciona una de las opciones"
                 },
                 "action": {
                     "buttons":[
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"cli",
-                                "title":"Cliente - Distribuidor"
+                                "id":"btnsi",
+                                "title":"Si"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"concom",
-                                "title":"Consumidor - Comprador"
+                                "id":"btnno",
+                                "title":"No"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"concom",
-                                "title":"Consumidor - Comprador"
+                                "id":"btntalvez",
+                                "title":"Tal Vez"
                             }
                         }
                     ]
