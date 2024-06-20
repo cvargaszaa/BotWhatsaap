@@ -190,12 +190,26 @@ def enviar_mensajes_whatsapp(texto,number):
                                     "description": "La entrega se realiza todos los dias."
                                 }
                             ]
+                        },{
+                            "title":"Reclamos",
+                            "rows":[
+                                {
+                                    "id":"btndireccion",
+                                    "title" : "Local",
+                                    "description": "Puedes visitar nuestro local."
+                                },
+                                {
+                                    "id":"btnentrega",
+                                    "title" : "Entrega",
+                                    "description": "La entrega se realiza todos los dias."
+                                }
+                            ]
                         }
                     ]
                 }
             }
         }    
-    elif "btnq" in texto:
+    elif "btnq1" in texto:
         data={
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
