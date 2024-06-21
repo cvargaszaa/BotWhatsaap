@@ -132,7 +132,7 @@ def enviar_mensajes_whatsapp(texto,number):
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"btnsi",
+                                "id":"client",
                                 "title":"Cliente"
                             }
                         },{
@@ -154,10 +154,10 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type" : "list",
                 "body": {
-                    "text": "Selecciona Alguna Opción"
+                    "text": "👍🏼Estimado Consumidor👍🏼\n \n A continuación enlisto las opciones disponibles"
                 },
                 "footer": {
-                    "text": "Selecciona una de las opciones para poder ayudarte"
+                    "text": "Selecciona una de las opciones:"
                 },
                 "action":{
                     "button":"Ver Opciones",
@@ -195,6 +195,84 @@ def enviar_mensajes_whatsapp(texto,number):
                 }
             }
         }
+    elif "client" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "👍🏼Gracias!!👍🏼\n \n Estimado Cliente, a continuación enlisto las opciones disponibles?"
+                },
+                "footer": {
+                    "text": "Selecciona una de las opciones"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"info",
+                                "title":"Información"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnno",
+                                "title":"Solicitudes"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btntalvez",
+                                "title":"Reclamos"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    elif "info" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
+                    "text": "A continuación te muestro las opciones disponibles en esta sección\n \n"
+                },
+                "footer": {
+                    "text": "Selecciona una de las opciones"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnq1",
+                                "title":"¿Quienes somos?"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnpro",
+                                "title":"Inf. de Productos"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"btnven",
+                                "title":"Inf. Punto de venta"
+                            }
+                        }
+                    ]
+                }
+            }
+        }   
     elif "btnq1" in texto:
         data={
             "messaging_product": "whatsapp",
@@ -266,7 +344,7 @@ def enviar_mensajes_whatsapp(texto,number):
     
     headers = {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAQ5ZBipbEvkBOyjeluwOFwu8RxOPiplAnEckHmYXAy7M4whz3M9QVrgL6CjArHtmu7yDx2FwWdb8NvYA641qwvYRmDpRJE7ZBZAiv31bKDau38TUq95oql6m7lqZBym00GVmTDovr08W21p5PM88NJQQmEhqO3VDRWU1GVNClijm4ZAf1oLj6DiTXZAUPQNZCQhSId3jjZBqUihKVOOcYcaHZCHJhkEZD"
+        "Authorization" : "Bearer EAAQ5ZBipbEvkBO1ZCMRP5YCnaHmvgxnRM0M7gHspi2ywwwJCTlzH7ZBd7YAFUPxXWKxtKJd3i2PBP2TPhud22pUG9XHjwknGNLWtihjPnADIqpiBgmVyCFLoHFv5VA01iWw3j7W7SG7LuZBMbzUHEDIKPz8NHfQ5tMuX2tcbQX1GZBTZAmG9nd7x97OY2rl1VHZCgS9ULXf0Ft68hT1OMrSN3Gdxakf"
     }
     connection = http.client.HTTPSConnection("graph.facebook.com")
     
