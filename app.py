@@ -122,6 +122,39 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
+                    "text": "✨¡Welcome!✨\n Please, select the language of your preference\n \n✨¡Bienvenido!✨\n Por favor, seleccione el idioma de su preferencia"
+                },
+                "footer": {
+                    "text": "language:"
+                },
+                "action": {
+                    "buttons":[
+                        {
+                            "type": "reply",
+                            "reply":{
+                                "id":"spanish",
+                                "title":"Spanish/Español"
+                            }
+                        },{
+                            "type": "reply",
+                            "reply":{
+                                "id":"eng",
+                                "title":"English/Ingles"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    elif "spanish" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "interactive",
+            "interactive":{
+                "type":"button",
+                "body": {
                     "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
                 },
                 "footer": {
@@ -291,7 +324,7 @@ def enviar_mensajes_whatsapp(texto,number):
             "to": number,
             "type": "document",
             "document": {
-                    "link": "https://empresaspolar.com/files/Lista_APC_activos.pdf",
+                    "link": "https://es.allofpan.com/pdf/catalogo-alimentos-polar.pdf",
                     "caption": "Lista de Productos Activos - Disponibles"
                 }
             }
@@ -305,7 +338,7 @@ def enviar_mensajes_whatsapp(texto,number):
                     "link": "https://www.ign.es/espmap/mapas_mundo_bach/pdf/Mundo_Mapa_04.pdf",
                     "caption": "Donde estamos presente - Puntos de venta Autorizados"
                 }
-        }
+        }   
     else:
         data = {
             "messaging_product": "whatsapp",
@@ -315,24 +348,24 @@ def enviar_mensajes_whatsapp(texto,number):
             "interactive":{
                 "type":"button",
                 "body": {
-                    "text": "✨¡Bienvenido!✨\n \n Mi nombre es *P.A.NDora*, la asistente virtual del Negocio Internacional de Empresas Polar🌎\n \n¿En que puedo ayudarte?👩🏻‍💼\n"
+                    "text": "✨¡Welcome!✨\n Please, select the language of your preference\n \n✨¡Bienvenido!✨\n Por favor, seleccione el idioma de su preferencia"
                 },
                 "footer": {
-                    "text": "Por Favor indicame si eres:"
+                    "text": "language:"
                 },
                 "action": {
                     "buttons":[
                         {
                             "type": "reply",
                             "reply":{
-                                "id":"btnsi",
-                                "title":"Si"
+                                "id":"spanish",
+                                "title":"Spanish/Español"
                             }
                         },{
                             "type": "reply",
                             "reply":{
-                                "id":"concom",
-                                "title":"Consumidor"
+                                "id":"eng",
+                                "title":"English/Ingles"
                             }
                         }
                     ]
@@ -344,7 +377,7 @@ def enviar_mensajes_whatsapp(texto,number):
     
     headers = {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer EAAQ5ZBipbEvkBO1ZCMRP5YCnaHmvgxnRM0M7gHspi2ywwwJCTlzH7ZBd7YAFUPxXWKxtKJd3i2PBP2TPhud22pUG9XHjwknGNLWtihjPnADIqpiBgmVyCFLoHFv5VA01iWw3j7W7SG7LuZBMbzUHEDIKPz8NHfQ5tMuX2tcbQX1GZBTZAmG9nd7x97OY2rl1VHZCgS9ULXf0Ft68hT1OMrSN3Gdxakf"
+        "Authorization" : "Bearer EAAQ5ZBipbEvkBO3jAcgojlv6FlbPUbzUQAijVmRKtYIZBhbwgRxPZCSrBZABOcETKZBfGyiLaczKFJqntqg7TgSSwwHjAZC4QPYC3Lu0q0uMyAtcRXR4H1XptqE3H4TAV1ZBaIcZCnkjmWhaTclg85F7SZA5tBcffIZANDYFZAaXcaSxH66PdowkTTmdguSa4uqu6YqIZCYde9SDloHkI3bjSK9Lz4ZC3bZCQZD"
     }
     connection = http.client.HTTPSConnection("graph.facebook.com")
     
